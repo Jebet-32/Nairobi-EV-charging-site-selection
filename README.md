@@ -28,3 +28,13 @@ investment before becoming viable.
 - `Car_Suitability_Map.jpeg` / `Motorcycle_Suitability_Map.jpeg` — final suitability maps
 - `Motocylcle_Swap station AHP.csv` — AHP pairwise comparison matrix and weight calculations
 - `Nairobi_EV_Siting.qgz` — full QGIS project file
+
+  ## How to Reproduce
+1. Export OSM data for your study area via HOT Export Tool (roads, POIs, land use, power)
+2. Clip layers to study area boundary in QGIS
+3. Generate distance-to-feature rasters using Proximity (Raster Distance)
+4. Normalize each raster to a 0–1 scale
+5. Build AHP pairwise comparison matrices in Excel to derive criteria weights 
+   (verify Consistency Ratio < 0.10)
+6. Combine normalized rasters using Raster Calculator with AHP weights
+7. Reclassify and style the final suitability surface
